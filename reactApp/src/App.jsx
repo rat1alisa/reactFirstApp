@@ -1,12 +1,16 @@
 
 import MyComponent from "./components/MyComponent";
 
-
 function App(){
   return (
     <div>
-      <h1>React</h1>
-      <MyComponent />
+      <h1>React Components</h1>
+
+      <MyComponent title="Пользовательский заголовок номер 1" description="Hola:)"/>
+
+      <MyComponent title="Пользовательский заголовок номер 2" description="Hi:)"/>
+
+      <MyComponent title="Пользовательский заголовок номер 3" description="Здравствуй:)"/>
     </div>
   );
 }
