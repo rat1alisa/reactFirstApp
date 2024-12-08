@@ -1,17 +1,25 @@
 import PropTypes from "prop-types";
+import Button from "../common/Button/Button";
+import Counter from "../Counter/Counter";
 import "./MyComponent.css";
 
-
-const MyComponent = (props)  => {
+const MyComponent = ({title, description})  => {
     /*const MyCompProps = { 
         title : "Заголовок по умолчанию",
         description : "Описание по умолчанию" 
     };*/
-    
     return (
         <div className="container">
-            <h1 className="title">{props.title}</h1>
-            <p className="description">{props.description}</p>
+            <h1 className="title">{title}</h1>
+            <p className="description">{description}</p>
+
+            <Button
+                onClick={() => alert('Clicked!')}
+            >
+                Click me!!
+            </Button>
+
+            <Counter />
         </div>
     );
 };

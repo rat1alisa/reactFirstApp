@@ -1,16 +1,12 @@
-
-import MyComponent from "./components/MyComponent";
+import MyComponent from "./components/MyComponent/MyComponent";
 
 function App(){
   return (
-    <div>
-      <h1>React Components</h1>
-
-      <MyComponent title="Пользовательский заголовок номер 1" description="Hola:)"/>
-
-      <MyComponent title="Пользовательский заголовок номер 2" description="Hi:)"/>
-
-      <MyComponent title="Пользовательский заголовок номер 3" description="Здравствуй:)"/>
+    <div class="mainBlock">
+      <MyComponent 
+        title="Пользовательский заголовок 1" 
+        description="Hola:)"
+      />
     </div>
   );
 }
