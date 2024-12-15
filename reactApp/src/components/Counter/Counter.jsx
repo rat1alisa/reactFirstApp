@@ -1,8 +1,23 @@
 import React, { useState } from "react";
+import { useLayoutEffect, useEffect } from "react";
 import Button from "../common/Button/Button";
 
 const Counter = () => {
+
     const [count, setCount] = useState(0);  
+    
+    useEffect(() => { console.log('Count has changed')}, [count])
+    //[] - хук вызовется 1 раз, после изменения состояния (изменения count)
+    
+    useLayoutEffect(() => {
+        console.log("test title using useLayoutEffect");
+        
+    }, [])
+    //изменит перед тем. как браузер перерисует экран
+    useEffect(() => {
+        console.log("test title using useEffect");
+    }, [])
+    
     return (
         <div>
             <h2>{count} likes</h2>
@@ -40,6 +55,8 @@ const userNamesById = users.reduce(function(result, user) {
         [user.id]: user.name,
     }
 }, {})*/
+
+//[] - запуск действия после конкретного действия (хук вызовется 1 раз, после монтирования компонента/изменения состояния)
 
 
 
