@@ -1,3 +1,4 @@
+import Form from "./components/common/MyForm/MyForm";
 import MyComponent from "./components/MyComponent/MyComponent";
 
 function App(){
@@ -7,6 +8,8 @@ function App(){
         title="Пользовательский заголовок 1" 
         description="Hola:)"
       />
+
+      <Form />
     </div>
   );
 }
