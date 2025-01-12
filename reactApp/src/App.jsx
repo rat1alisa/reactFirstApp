@@ -1,16 +1,29 @@
-import Form from "./components/common/MyForm/MyForm";
-import MyComponent from "./components/MyComponent/MyComponent";
+//import Form from "./components/common/MyForm/MyForm";
+import { BrowserRouter as Router,
+  Route,
+  Routes 
+  } from 'react-router-dom';
+import Counter from "./components/Counter/Counter";
+import Home from "./components/HomePage/HomePage";
+
 
 function App(){
   return (
-    <div class="mainBlock">
+    <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/counter" element={<Counter />} />
+        </Routes>
+    </Router>
+    
+    /*<div class="mainBlock">
       <MyComponent 
         title="Пользовательский заголовок 1" 
         description="Hola:)"
       />
 
       <Form />
-    </div>
+    </div>*/
   );
 }
 
