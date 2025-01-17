@@ -19,7 +19,7 @@ const Counter = () => {
     }, [])
     
     return (
-        <div>
+        <div className="counterBlock">
             <h2>{count} likes</h2>
             <Button onClick={() => setCount(count + 1)}>👍</Button>
             <Button onClick={() => setCount(count - 1)}>👎</Button>

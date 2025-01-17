@@ -1,20 +1,49 @@
 //import Form from "./components/common/MyForm/MyForm";
-import { BrowserRouter as Router,
+import { BrowserRouter,
+  Form,
+  NavLink,
   Route,
-  Routes 
-  } from 'react-router-dom';
+  Routes, 
+  } from 'react-router';
 import Counter from "./components/Counter/Counter";
 import Home from "./components/HomePage/HomePage";
+import Header from "./components/common/Header/Header"
 
 
 function App(){
   return (
-    <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/counter" element={<Counter />} />
-        </Routes>
-    </Router>
+    <BrowserRouter>
+    <Routes>
+    <Route index element={<Home />} />
+    <Route path="/counter" element={<Counter />} />
+  </Routes>
+
+    <Header />
+    <nav>
+      <NavLink to="/" 
+      /*className={({ isActive, isPending }) => 
+  isPending ? "pending" : isActive ? "active" : ""*/
+    style={({ isActive }) => ({
+      color: isActive ? "#A8EB12" : "#051937"
+  })
+    }
+    >
+    Home Page
+    </NavLink>
+    <br />
+    <NavLink to="/counter" 
+      style={({ isActive }) => ({
+        color: isActive ? "#A8EB12" : "#051937"
+      })
+    }
+    >
+    Counter Page
+    </NavLink>
+    </nav>
+
+    </BrowserRouter>
+
+    
     
     /*<div class="mainBlock">
       <MyComponent 
