@@ -8,6 +8,7 @@ import { BrowserRouter,
 import Counter from "./components/Counter/Counter";
 import Home from "./components/HomePage/HomePage";
 import Header from "./components/common/Header/Header"
+import CounterSecond from './Counter1';
 
 
 function App(){
@@ -16,7 +17,7 @@ function App(){
     <Routes>
     <Route index element={<Home />} />
     <Route path="/counter" element={<Counter />} />
-  </Routes>
+    </Routes>
 
     <Header />
     <nav>
@@ -25,7 +26,7 @@ function App(){
   isPending ? "pending" : isActive ? "active" : ""*/
     style={({ isActive }) => ({
       color: isActive ? "#A8EB12" : "#051937"
-  })
+    })
     }
     >
     Home Page
@@ -41,6 +42,8 @@ function App(){
     </NavLink>
     </nav>
 
+    <CounterSecond />
+  
     </BrowserRouter>
 
     
