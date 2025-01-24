@@ -2,18 +2,29 @@
 import { BrowserRouter,
   Form,
   NavLink,
+  Outlet,
   Route,
   Routes, 
   } from 'react-router';
 import Counter from "./components/Counter/Counter";
 import Home from "./components/HomePage/HomePage";
 import Header from "./components/common/Header/Header"
-import CounterSecond from './Counter1';
 
 
 function App(){
   return (
-    <BrowserRouter>
+    <div>
+      <Header />
+      <Outlet />
+    </div>
+  );
+}
+
+export default App;
+
+/*
+
+<BrowserRouter>
     <Routes>
     <Route index element={<Home />} />
     <Route path="/counter" element={<Counter />} />
@@ -23,45 +34,34 @@ function App(){
     <nav>
       <NavLink to="/" 
       /*className={({ isActive, isPending }) => 
-  isPending ? "pending" : isActive ? "active" : ""*/
+  isPending ? "pending" : isActive ? "active" : ""
+  style={({ isActive }) => ({
+    color: isActive ? "#A8EB12" : "#051937"
+  })
+  }*/
+  /*>
+  Home Page
+  </NavLink>
+  <br />
+  <NavLink to="/counter" 
     style={({ isActive }) => ({
       color: isActive ? "#A8EB12" : "#051937"
     })
-    }
-    >
-    Home Page
-    </NavLink>
-    <br />
-    <NavLink to="/counter" 
-      style={({ isActive }) => ({
-        color: isActive ? "#A8EB12" : "#051937"
-      })
-    }
-    >
-    Counter Page
-    </NavLink>
-    </nav>
+  }
+  >
+  Counter Page
+  </NavLink>
+  </nav>
 
-    <CounterSecond />
-  
-    </BrowserRouter>
+  <CounterSecond />
 
-    
-    
-    /*<div class="mainBlock">
-      <MyComponent 
-        title="Пользовательский заголовок 1" 
-        description="Hola:)"
-      />
+  </BrowserRouter>
 
-      <Form />
-    </div>*/
-  );
-}
 
-export default App;
 
-/*
+
+
+
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'

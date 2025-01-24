@@ -1,6 +1,10 @@
 .counterBlock{
     display: flex;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
     align-items: center;
-    justify-content: center;
-    background-color: aliceblue;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 20px;
 }

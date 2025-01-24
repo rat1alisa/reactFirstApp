@@ -1,47 +1,73 @@
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+import Button from '../Button/Button';
 import "./MyForm.css";
 //import { useHistory } from 'react-router-dom';
 
 const Form = () => {
 
-    const { register } = useForm();
+    const { register, handleSubmit, formState: { errors} } 
+    = useForm();
+    const navigate = useNavigate();
 
-    function onSubmit(data) {
+    /*function onSubmit(data) {
         console.log(data);
+    };*/
+
+    const onSubmit = (data) => {
+        console.log("Form Submitted:", data);
+        navigate('/counter');
     };
 
     return (
-        <div>
+        <div className='form'>
             <h4>Sign up</h4>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="name" 
-                ref={register({
-                    required: true,
-                    minLength: 6,
-                    maxLength: 24,
-                })} 
-                placeholder="Name" 
-                style={style.input} 
+            <form onSubmit={handleSubmit(onSubmit)} className='form'>
+            <input 
+                    {...register("name", {
+                        required: "Name is required",
+                        minLength: {
+                            value: 6,
+                            message: "Name must be at least 6 characters",
+                        },
+                        maxLength: {
+                            value: 24,
+                            message: "Name must be no more than 24 characters",
+                        },
+                    })}
+                    className="input"
+                    placeholder="Name"
                 />
-                <input 
-                name="email" 
-                ref={register({
-                    required: true,
-                    minLength: 12,
-                    maxLength: 40,
-                })} 
-                placeholder="Email" 
-                />
-                <input 
-                name="password" 
-                ref={register({
-                    required: true,
-                    length: 8,
-                })}  
-                placeholder="Password" 
-                />
+                {errors.name && <p className="error">{errors.name.message}</p>}
 
-                <button type="submit">Submit</button>
+                <input
+                    {...register("email", {
+                        required: "Email is required",
+                        minLength: {
+                            value: 12,
+                            message: "Email must be at least 12 characters",
+                        },
+                        maxLength: {
+                            value: 40,
+                            message: "Email must be no more than 40 characters",
+                        },
+                    })}
+                    className="input"
+                    placeholder="Email"
+                />
+                {errors.name && <p className="error">{errors.name.message}</p>}
+
+                <input 
+                    {...register("password", {
+                        required: "Password is required",
+                        length: 8,
+                    })}
+                    className="input"
+                    placeholder="Password"
+                />
+                {errors.name && <p className="error">{errors.name.message}</p>}
+                
+                <Button type="submit">Submit</Button>
             </form>
         </div>
     );
