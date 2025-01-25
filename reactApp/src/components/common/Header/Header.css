@@ -1,12 +1,47 @@
+body{
+  background-color: #17151d;
+}
+
 header {
-    background-color: #a4eaff;
+    /*background-color: #ffffff;
     margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    border: thick double #d27eff;
+    background: radial-gradient(#480d35, #17151d);
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);*/
+
+    background-color: #f5ba13;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
   
   header h1 {
     color: rgb(0, 0, 0);
     font-family: "McLaren", cursive;
     font-weight: 200;
+    font-size: large;
+  }
+
+  .link{
+    text-decoration: none;
+    display: block;
+    font-style: italic;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+  }
+
+  .Header{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .logo{
+    width: 50px;
   }

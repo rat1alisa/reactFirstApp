@@ -3,8 +3,11 @@
     border: 2px solid rgb(0, 0, 0);
     border-radius: 5px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: row;
     gap: 15px;
     margin-top: 20px;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(241,241,241,1) 0%, rgba(255,255,255,1) 0%, rgba(255,211,86,1) 100%);
+
 }
