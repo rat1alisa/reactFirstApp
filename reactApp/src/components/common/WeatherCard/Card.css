@@ -1,5 +1,7 @@
-/* From Uiverse.io by zanina-yassine */ 
+
 .card {
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 350px;
     height: 235px;
     position: relative;
