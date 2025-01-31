@@ -6,8 +6,8 @@ import { BrowserRouter,
   Route,
   Routes, 
   } from 'react-router';
-import Counter from "./components/Counter/Counter";
-import Home from "./components/HomePage/HomePage";
+//import Counter from "./components/Counter/Counter";
+//import Home from "./components/HomePage/HomePage";
 import Header from "./components/common/Header/Header"
 import Card from './components/common/WeatherCard/Card';
 
