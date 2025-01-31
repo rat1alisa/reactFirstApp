@@ -5,7 +5,7 @@ import "./Users.css";
 
 const Users = () => {
 
-    const [users, setUsers] = useState();
+    const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect (() => {
@@ -29,12 +29,12 @@ const Users = () => {
     return (
         <div>
             <h1 className='text'>Список пользователей</h1>
-            <ul>
-                {users.map((user) => {
+            <ul className='list'>
+            {users.map((user) => (
                     <li key={user.id}>
                         {user.name} ({user.email})
                     </li>
-                })}
+            ))}
             </ul>
         </div>
     );

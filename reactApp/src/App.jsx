@@ -9,12 +9,14 @@ import { BrowserRouter,
 import Counter from "./components/Counter/Counter";
 import Home from "./components/HomePage/HomePage";
 import Header from "./components/common/Header/Header"
+import Card from './components/common/WeatherCard/Card';
 
 
 function App(){
   return (
     <div>
       <Header />
+      <Card country="Messadine" date="January" tempr="31" />
       <Outlet />
     </div>
   );

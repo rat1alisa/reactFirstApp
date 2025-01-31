@@ -1,3 +1,9 @@
 .text{
     color: white;
 }
+
+.list{
+    list-style: none;
+    font-size: large;
+    color: white;
+}
