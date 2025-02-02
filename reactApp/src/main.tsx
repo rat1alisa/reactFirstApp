@@ -32,7 +32,28 @@ root.render(
 );
 
 
-/*ReactDOM.render(
+/*
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      { path: '/', element: <Home /> },
+      { path: '/counter', element: <Counter />},
+    ],
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(
+  <React.StrictMode>
+     <Provider store={store}>
+        <RouterProvider router={router} />
+     </Provider>
+  </React.StrictMode>
+);
+
+ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,

@@ -3,7 +3,12 @@ import Button from "../common/Button/Button";
 import Counter from "../Counter/Counter";
 import "./MyComponent.css";
 
-const MyComponent = ({title, description})  => {
+interface MyComponentProps{
+    title: string;
+    description: string;
+}
+
+const MyComponent = ({title, description}: MyComponentProps)  => {
     /*const MyCompProps = { 
         title : "Заголовок по умолчанию",
         description : "Описание по умолчанию" 

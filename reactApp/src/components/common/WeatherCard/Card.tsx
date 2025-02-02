@@ -3,8 +3,13 @@ import { useLayoutEffect, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import "./Card.css";
 
+interface CardProps {
+  country: string;
+  date: string;
+  tempr: string;
+}
 
-const Card = ({country, date, tempr}) => {
+const Card = ({country, date, tempr}: CardProps) => {
 
     return (
         <div className="card">

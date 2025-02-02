@@ -3,11 +3,24 @@ import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../api/axiosInstance';
 import "./Users.css";
 
+
+interface User{
+    id: number;
+    name: string;
+    email: string;
+}
+
 const Users = () => {
 
-    const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState<User[]>([]);
     const [loading, setLoading] = useState(true);
 
+
+    /*useEffect(() => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then((res) => res.json())
+            .then((data: User[]) => setUsers(data));
+    }, []);*/
     useEffect (() => {
         const fetchUsers = async () => {
             try{
